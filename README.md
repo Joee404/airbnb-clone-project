@@ -47,5 +47,32 @@ This project follows a collaborative structure where each team member is respons
   - Track progress and manage risks.
 
 ---
+## ⚙️ Technology Stack
+
+This project uses a modern, scalable technology stack designed for building a production-ready Airbnb Clone. Each technology has a specific role in ensuring performance, reliability, and maintainability.
+
+### 🔹 Backend
+- **Django**: A high-level Python web framework that powers the backend, providing structure, security, and built-in features for rapid development.
+- **Django REST Framework (DRF)**: Extends Django to provide RESTful APIs for handling CRUD operations, authentication, and serialization.
+- **GraphQL**: Offers a flexible and efficient query mechanism, allowing clients to request exactly the data they need.
+
+### 🔹 Database & Data Management
+- **PostgreSQL**: A powerful relational database used to store structured data such as users, properties, bookings, and reviews.
+- **Redis**: In-memory data store used for caching, session management, and improving application performance.
+- **Database Optimizations**:
+  - **Indexing**: Speeds up queries for frequently accessed fields.
+  - **Caching**: Reduces database load and improves response times.
+
+### 🔹 Asynchronous Processing
+- **Celery**: Handles background tasks such as sending booking confirmations, processing payments, and sending notifications.
+- **Redis (as broker/queue)**: Supports Celery for managing and processing asynchronous jobs.
+
+### 🔹 Infrastructure & Deployment
+- **Docker**: Provides containerized environments for consistent development, testing, and deployment across different systems.
+- **CI/CD Pipelines**: Automates testing and deployment to ensure reliable and continuous delivery of new features.
+
+---
 
 ✅ Each role contributes to building a reliable, scalable, and user-friendly Airbnb Clone that mirrors the functionality of the real platform.
+✅ Together, this stack ensures the Airbnb Clone is **scalable, performant, and developer-friendly**, capable of handling real-world use cases like bookings, payments, and reviews.
+
