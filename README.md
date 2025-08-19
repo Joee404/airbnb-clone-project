@@ -149,10 +149,48 @@ The backend APIs are documented using the **OpenAPI standard**, ensuring clarity
 Implements performance improvements such as **indexing** for fast query execution and **caching** with Redis to reduce database load. These optimizations enhance the responsiveness and scalability of the application.
 
 ---
+## 🔒 API Security
+
+Security is a top priority for the Airbnb Clone project to protect user data, ensure safe transactions, and maintain trust. The following security measures will be implemented across the backend APIs:
+
+### 🔹 Authentication
+- **What it is:** Verifies the identity of users before granting access to the system.
+- **Implementation:** Token-based authentication (e.g., JWT) will be used to ensure that only verified users can interact with the APIs.
+- **Why it matters:** Prevents unauthorized access and ensures that only registered users can book properties, post reviews, or manage listings.
+
+### 🔹 Authorization
+- **What it is:** Determines what actions an authenticated user is allowed to perform.
+- **Implementation:** Role-based access control (RBAC) to differentiate between guests, hosts, and administrators.
+- **Why it matters:** Ensures that users can only perform actions permitted by their role, such as preventing guests from modifying other users’ properties.
+
+### 🔹 Data Protection
+- **What it is:** Safeguarding sensitive information such as passwords and payment details.
+- **Implementation:** 
+  - Passwords stored using strong hashing algorithms (e.g., bcrypt).  
+  - Encrypted communication via HTTPS/TLS for all API requests.  
+- **Why it matters:** Protects users’ personal data and financial information from exposure or theft.
+
+### 🔹 Rate Limiting
+- **What it is:** Restricting the number of API requests a user can make in a given timeframe.
+- **Implementation:** API gateway or middleware-based rate limiting to mitigate abuse.
+- **Why it matters:** Prevents denial-of-service (DoS) attacks and protects system resources from being overloaded.
+
+### 🔹 Input Validation & Sanitization
+- **What it is:** Ensuring that data received through APIs is safe and valid.
+- **Implementation:** Validate all user inputs and sanitize queries to prevent injection attacks (e.g., SQL injection, XSS).
+- **Why it matters:** Prevents malicious input from compromising the system or corrupting data.
+
+### 🔹 Secure Payments
+- **What it is:** Protecting financial transactions.
+- **Implementation:** Integration with trusted third-party payment gateways (e.g., Stripe, PayPal) that comply with PCI DSS standards.
+- **Why it matters:** Ensures that sensitive payment details are never directly handled or stored by the application, reducing risk of fraud or data breaches.
+
+---
 
 ✅ Each role contributes to building a reliable, scalable, and user-friendly Airbnb Clone that mirrors the functionality of the real platform.
 ✅ Together, this stack ensures the Airbnb Clone is **scalable, performant, and developer-friendly**, capable of handling real-world use cases like bookings, payments, and reviews.
 ✅ This schema ensures clear relationships between users, properties, bookings, reviews, and payments, supporting the essential workflows of the Airbnb Clone.
 ✅ Together, these features deliver a full-fledged Airbnb-like platform that supports hosts, guests, and administrators with robust booking, payment, and review functionalities.
+✅ With these measures in place, the Airbnb Clone backend will provide a secure environment for users, safeguarding **personal data, property listings, bookings, and financial transactions**.
 
 
