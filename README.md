@@ -72,7 +72,59 @@ This project uses a modern, scalable technology stack designed for building a pr
 - **CI/CD Pipelines**: Automates testing and deployment to ensure reliable and continuous delivery of new features.
 
 ---
+## 🗄️ Database Design
+
+The database is structured to support the core functionality of the Airbnb Clone, ensuring data consistency, scalability, and efficient relationships between entities.
+
+### 🔹 Key Entities & Fields
+
+#### 1. Users
+- **id** (Primary Key): Unique identifier for each user.
+- **name**: Full name of the user.
+- **email**: Unique email address for login.
+- **password_hash**: Encrypted password for authentication.
+- **role**: Defines whether the user is a guest, host, or admin.
+
+#### 2. Properties
+- **id** (Primary Key): Unique identifier for each property.
+- **owner_id** (Foreign Key → Users.id): The user (host) who owns the property.
+- **title**: Short descriptive title of the property.
+- **location**: Address or city of the property.
+- **price_per_night**: Rental price per night.
+
+#### 3. Bookings
+- **id** (Primary Key): Unique identifier for each booking.
+- **property_id** (Foreign Key → Properties.id): The property being booked.
+- **user_id** (Foreign Key → Users.id): The guest who made the booking.
+- **check_in**: Start date of the booking.
+- **check_out**: End date of the booking.
+
+#### 4. Reviews
+- **id** (Primary Key): Unique identifier for each review.
+- **property_id** (Foreign Key → Properties.id): The property being reviewed.
+- **user_id** (Foreign Key → Users.id): The guest who wrote the review.
+- **rating**: Numeric rating (e.g., 1–5).
+- **comment**: Review text provided by the guest.
+
+#### 5. Payments
+- **id** (Primary Key): Unique identifier for each payment.
+- **booking_id** (Foreign Key → Bookings.id): The booking associated with the payment.
+- **amount**: Total amount paid.
+- **payment_date**: Date when the payment was processed.
+- **status**: Payment status (e.g., pending, completed, failed).
+
+---
+
+### 🔹 Entity Relationships
+- **User ↔ Properties**: A user (host) can list multiple properties, but each property belongs to one host.  
+- **User ↔ Bookings**: A user (guest) can make multiple bookings; each booking belongs to one user.  
+- **Property ↔ Bookings**: A property can have many bookings; each booking is linked to one property.  
+- **Property ↔ Reviews**: A property can have many reviews; each review belongs to one property and is written by one user.  
+- **Booking ↔ Payments**: Each booking has one associated payment record.
+
+---
 
 ✅ Each role contributes to building a reliable, scalable, and user-friendly Airbnb Clone that mirrors the functionality of the real platform.
 ✅ Together, this stack ensures the Airbnb Clone is **scalable, performant, and developer-friendly**, capable of handling real-world use cases like bookings, payments, and reviews.
+✅ This schema ensures clear relationships between users, properties, bookings, reviews, and payments, supporting the essential workflows of the Airbnb Clone.
 
